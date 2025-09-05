@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-blood-donation.jpg";
 
 const Hero = () => {
@@ -50,22 +51,26 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-primary shadow-medical text-lg px-8 py-3"
-              >
-                <Users className="h-5 w-5 mr-2" />
-                Become a Donor
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-3 border-primary hover:bg-primary-soft"
-              >
-                <MapPin className="h-5 w-5 mr-2" />
-                Find Blood Bank
-              </Button>
+              <Link to="/register">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-primary shadow-medical text-lg px-8 py-3"
+                >
+                  <Users className="h-5 w-5 mr-2" />
+                  Become a Donor
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
+              <Link to="/recipient-dashboard">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="text-lg px-8 py-3 border-primary hover:bg-primary-soft"
+                >
+                  <MapPin className="h-5 w-5 mr-2" />
+                  Find Blood Bank
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}
